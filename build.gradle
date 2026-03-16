@@ -35,6 +35,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+ext['logback.version'] = '1.5.32'
+
 test {
     useJUnitPlatform()
 }
