@@ -1,1 +1,13 @@
+pluginManagement {
+    repositories {
+        maven {
+            url = eevee_maven_url
+            credentials {
+                username = maven_user
+                password = maven_password
+            }
+        }
+    }
+}
+
 rootProject.name = 'simple-spring'
