@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    uses: eeveebank/github-actions-backend/.github/workflows/gradle-build.yml@1c50d894e0cb5b96bf7e895dd6c6fa2093f204e5
+
+  publish:
+    needs: build
+    uses: eeveebank/github-actions-artifact-publishing/.github/workflows/publish.yml@84583f37158142c78d4245c5ef2631552aea89c9
+
+  deploy:
+    needs: publish
+    uses: eeveebank/github-actions-helm/.github/workflows/deploy.yml@2d2a4a94949f89dc61165e247828623f0651ce29
